@@ -18,7 +18,7 @@ if os.path.exists(wd) or wd == "":
         if not os.path.isfile(os.path.join(".", entry)) and entry != ".git":
             fromDirectory = "./" + entry
             toDirectory = "../calibre_usb"
-            # copy_tree(fromDirectory, toDirectory)
+            copy_tree(fromDirectory, toDirectory)
             print('from:' + fromDirectory + '; to: ' + toDirectory)
             to_be_del.append(entry)
     print('-----------------------------------')
@@ -29,7 +29,7 @@ if os.path.exists(wd) or wd == "":
     if confirm == "":
         print('to delete')
         for i in range(len(to_be_del)):
-            # send2trash("./"+to_be_del[i])   #need"./"?
+            send2trash("./"+to_be_del[i])   #need"./"?
             print("./"+to_be_del[i])
     else:
         print("items kept.")
